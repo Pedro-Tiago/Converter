@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--<link rel="stylesheet" href="style.converter.css">-->
+    <style>
+        body{
+    background-color: rgb(15, 66, 219);
+    padding-top: 80px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   
+}
+
+h1{
+    color:rgb(0, 0, 0)
+    
+}
+form{
+    text-align: center;
+}
+p{
+    padding-top: 15;
+    text-align: center;
+}
+article{
+    background-color: aliceblue;
+    width: 400px;
+    margin: auto;
+    border-radius: 12px;
+    padding: 20px;
+    
+}
+
+#btt1{
+    background-color: blanchedalmond;
+    border-radius: 10px;
+    border-color: transparent;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <article>
+    <h1>Fahrenheit to Celsius Converter</h1>
+    <form>
+      <p>Fahrenheit: <input type="number" id="fahrenheit"><br></p>
+      <input type="button" value="Convert" onclick="convertToCelsius()" id="btt1">
+      <input type="button" value="Reset" onclick="reset()" id="btt1">
+    </form>
+    <p>Celsius: <span id="celsius"></span></p>
+    
+    </article>
+    <script>
+      function convertToCelsius() {
+        // Get the temperature in Fahrenheit from the input field
+        var fahrenheit = document.getElementById("fahrenheit").value;
+
+        // Convert the temperature to Celsius
+        var celsius = (fahrenheit - 32) * (5 / 9);
+        var celsius = celsius.toFixed(2)
+        
+        // Display the temperature in Celsius
+        document.getElementById("celsius").innerHTML = celsius;
+        
+      }
+      function reset() {
+        
+        var fahrenheit = document.getElementById('fahrenheit').value;
+        fahrenheit = ''
+      }
+
+    </script>
+</body>
+</html>
